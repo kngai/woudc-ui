@@ -61,7 +61,7 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^6.2.2",
-    "follow-redirects": "^1.14.7",
+    "follow-redirects": "^1.14.8",
     "husky": "^2.7.0",
     "i18n-checker": "^2.0.0",
     "jest": "^27.3.1",
