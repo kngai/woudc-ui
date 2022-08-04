@@ -120,7 +120,7 @@ export default {
    ** Build configuration
    */
   ssr: true, // false for SPA mode, true for full static mode
-  // target: 'static', // static hosting
+  target: 'server', // static hosting
   googleFonts: {
     // Vuetify default font:
     // https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap

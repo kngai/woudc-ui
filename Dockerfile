@@ -15,6 +15,7 @@ RUN npm install
 
 # build necessary, even if no static files are needed,
 # since it builds the server as well
+# NOTE: be sure that target: 'server' in nuxt.config.js
 RUN npm run build
 
 # expose 3000 on container
