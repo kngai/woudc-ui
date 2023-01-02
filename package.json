@@ -33,7 +33,7 @@
     "axios": "^0.21.4",
     "chart.js": "^2.9.3",
     "leaflet": "^1.6.0",
-    "nuxt": "^2.15.8",
+    "nuxt": "^3.0.0",
     "nuxt-leaflet": "0.0.27",
     "vue-chartjs": "^3.5.0",
     "vue-i18n": "^8.22.2",
