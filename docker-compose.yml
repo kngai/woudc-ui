@@ -1,0 +1,11 @@
+# for local development
+version: '2.0-nightly'
+services:
+  woudc-ui:
+    image: woudc/woudc-ui:nightly
+    container_name: woudc-ui-nightly
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+    - '6081:6081'

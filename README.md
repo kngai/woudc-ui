@@ -37,6 +37,33 @@ $ npx nuxt generate --dotenv .env.ops
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+
+## Docker
+
+Docker commands:
+```bash
+# build
+docker build -t woudc-ui .
+
+# run container
+docker run -d -p 6081:6081 woudc-ui
+```
+
+Docker compose commands:
+```bash
+# build
+docker compose -f docker-compose.yml build
+
+# take down container
+docker compose -f docker-compose.yml down
+
+# ensure container is removed
+docker container rm -f woudc-ui-nightly
+
+# run container
+docker compose -f docker-compose.yml up -d
+```
+
 ## SPA fallback in deployment
 
 Since not all pages in WOUDC will be pre-generated, a fallback is required to redirect to `200.html` to handle pages with dynamic data.
