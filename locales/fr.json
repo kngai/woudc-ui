@@ -612,9 +612,9 @@
       "blurb-howto": "De plus amples informations sont disponibles sur la page d’{access}.",
       "blurb-intro": "Les services web du WOUDC se conforment aux normes ouvertes ratifiées par l’Open Geospatial Consortium (OGC) et l’International Organization for Standardization (ISO) qui assurent l’interopérabilité des données, en facilitant ainsi la découverte, l’accessibilité, la visualisation et l’intégration. Les normes de l’OGC et de l’Organisation internationale de normalisation (ISO) jouent un rôle prépondérant dans {interoperability} où elles font partie {wis} et sont prises en charge par de nombreuses sources libres grand public ou outils commerciaux.",
       "headers": {
-        "formats": "Format/Codage",
-        "resource": "Ressource",
-        "services": "Services web"
+        "formats": "Format\n",
+        "resourceType": "Type de ressource",
+        "api": "API"
       },
       "links": {
         "formats": {
@@ -628,7 +628,8 @@
           "discovery": "Métadonnées de découverte",
           "instruments": "Métadonnées des instruments",
           "observations": "Observations",
-          "stations": "Station de métadonnées"
+          "stations": "Station de métadonnées",
+          "station_instrument": "Métadonnées de station / instrument"
         },
         "services": {
           "csw": "OGC:CSW",

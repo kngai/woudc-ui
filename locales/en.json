@@ -612,9 +612,9 @@
       "blurb-howto": "More information can be found on the {access} page.",
       "blurb-intro": "WOUDC adheres to open standards which enable interoperability (discovery, access, visualization). Standards play an important role in {interoperability} as part of the {wis} and are supported by numerous off the shelf open source or commercial tools.",
       "headers": {
-        "formats": "Format/Encoding",
-        "resource": "Resource",
-        "services": "Service/API"
+        "formats": "Format",
+        "resourceType": "Resource type",
+        "api": "API"
       },
       "links": {
         "formats": {
@@ -628,7 +628,8 @@
           "discovery": "Discovery metadata",
           "instruments": "Instrument metadata",
           "observations": "Observations",
-          "stations": "Station metadata"
+          "stations": "Station metadata",
+          "station_instrument": "Station / instrument metadata"
         },
         "services": {
           "csw": "OGC:CSW",
@@ -640,7 +641,9 @@
       },
       "title": "Standards",
       "keywords": "standards,discovery,access,visualization,OGC,WMS,WFS,CSW,ISO",
-      "description": "WOUDC standards support and implementation"
+      "description": "WOUDC standards support and implementation",
+      "blurb-intro2": "WOUDC supports {os_ogc}, which facilitate interoperability and thus make ozone and UV data easy to discover, access, visualize and integrate. OGC standards play an important role in lowering the barrier to weather/climate/water data exchange as part of the WMO Information System and are supported by numerous off the shelf open source and commercial tools.",
+      "os_ogc": "open standards from the Open Geospatial Consortium (OGC)"
     },
     "keywords": "WOUDC,about,overview,ozone,ultraviolet radiation"
   },
