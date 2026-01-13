@@ -1029,7 +1029,11 @@
         "abbr": "API de l’OGC"
       },
       "keywords": "accessibilité des données, téléchargement des données, services web, WAF, OGC, API, SCW,WFS,CSW,ISO,métadonnées, catalogue, cartes, données, observations, csv, fichier de formes, kml, json, geojson",
-      "description": "Marche à suivre pour accéder aux données archivées du WOUDC via le site web, la recherche, le WAF et les services web"
+      "description": "Marche à suivre pour accéder aux données archivées du WOUDC via le site web, la recherche, le WAF et les services de l'OGC-API",
+      "apis": "Les API",
+      "webAPIs": "Outre les méthodes d'accès aux données brutes, les archives WOUDC sont également accessibles via des interfaces de programmation d'applications web (API) et des services web géospatiaux conformes aux standards internationaux accessibles au public. Les API web sont conçues pour faciliter les échanges entre machines via l'Internet et peuvent être utilisées dans des applications et des outils web, mobiles ou de bureau.",
+      "pywoudc": "pywoudc",
+      "notebooks": "notebooks"
     },
     "explore": {
       "bbox": {
