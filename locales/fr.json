@@ -1033,7 +1033,10 @@
       "apis": "Les API",
       "webAPIs": "Outre les méthodes d'accès aux données brutes, les archives WOUDC sont également accessibles via des interfaces de programmation d'applications web (API) et des services web géospatiaux conformes aux standards internationaux accessibles au public. Les API web sont conçues pour faciliter les échanges entre machines via l'Internet et peuvent être utilisées dans des applications et des outils web, mobiles ou de bureau.",
       "pywoudc": "pywoudc",
-      "notebooks": "notebooks"
+      "notebooks": "notebooks",
+      "woudcWAF": "WAF du WOUDC",
+      "wis2Cookbook": "WIS2 Cookbook",
+      "woudcAPI": "API du WOUDC"
     },
     "explore": {
       "bbox": {
