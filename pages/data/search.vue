@@ -355,7 +355,7 @@
             class="elevation-1"
             :headers="dataRecordHeaders"
             :items="dataRecords"
-            :options.sync="options"
+            :options.sync="optionsResultsTable"
             :server-items-length="numberMatched"
             :footer-props="dataTableFooterOption"
             :loading="loadingDataRecords"
@@ -490,7 +490,7 @@ export default {
       oldDataRecordHeadersExists: false,
       oldSearchExists: false,
       oldSearchParams: {},
-      options: {
+      optionsResultsTable: {
         page: 1,
         itemsPerPage: 10,
         sortDesc: [],
@@ -852,7 +852,7 @@ export default {
         }
       },
     },
-    options: {
+    optionsResultsTable: {
       async handler() {
         if (this.oldSearchExists == true && this.loadedTable == true) {
           this.refreshDataRecords()
@@ -1121,7 +1121,7 @@ export default {
       }
     },
     resetResultsOptions() {
-      this.options = {
+      this.optionsResultsTable = {
         page: 1,
         itemsPerPage: 10,
         sortDesc: [],
@@ -1192,7 +1192,7 @@ export default {
 
       let queryParams = ''
 
-      if (this.options['sortBy'].length === 0) {
+      if (this.optionsResultsTable['sortBy'].length === 0) {
         const sortByParams = {
           uv_index_hourly: 'observation_date,station_id,dataset_id',
           'TotalOzone_1.0': 'daily_date,station_id',
@@ -1208,9 +1208,9 @@ export default {
           (sortByParams[this.selectedDatasetID] || sortByParams['data_records'])
       } else {
         queryParams =
-          this.options['sortDesc'][0] == true
-            ? 'sortby=-' + this.options['sortBy']
-            : 'sortby=' + this.options['sortBy']
+          this.optionsResultsTable['sortDesc'][0] == true
+            ? 'sortby=-' + this.optionsResultsTable['sortBy']
+            : 'sortby=' + this.optionsResultsTable['sortBy']
       }
 
       let selected = {
@@ -1297,12 +1297,12 @@ export default {
 
       // for results pagination handling
       if (paginate == false) {
-        this.options['itemsPerPage'] = 10
-        this.options['page'] = 1
+        this.optionsResultsTable['itemsPerPage'] = 10
+        this.optionsResultsTable['page'] = 1
         this.loadedTable = false
       }
-      let itemsPerPage = this.options['itemsPerPage']
-      let page = this.options['page']
+      let itemsPerPage = this.optionsResultsTable['itemsPerPage']
+      let page = this.optionsResultsTable['page']
 
       const offset = page * itemsPerPage - itemsPerPage
       const Limit = itemsPerPage

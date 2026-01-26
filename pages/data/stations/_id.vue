@@ -483,7 +483,8 @@ export default {
       const deploymentsURL =
         this.$config.WOUDC_UI_API_URL + '/collections/deployments/items'
 
-      let queryParams = 'station_id=' + woudcID + '&sortby=contributor_name'
+      let queryParams =
+        'station_id=' + woudcID + '&sortby=contributor_name&limit=10000'
       const deploymentsResponse = await woudcClient.get(
         deploymentsURL + '?' + queryParams
       )
@@ -491,7 +492,9 @@ export default {
       this.deployments = deploymentsResponse.data.features.map(stripProperties)
 
       queryParams =
-        'station_id=' + woudcID + '&sortby=dataset_id,name,model,serial'
+        'station_id=' +
+        woudcID +
+        '&sortby=dataset_id,name,model,serial&limit=10000'
       const instrumentsResponse = await woudcClient.get(
         instrumentsURL + '?' + queryParams
       )

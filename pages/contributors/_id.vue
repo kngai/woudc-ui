@@ -249,7 +249,7 @@ export default {
       const deploymentsURL =
         this.$config.WOUDC_UI_API_URL + '/collections/deployments/items'
       const queryParams =
-        'contributor_acronym=' + acronym + '&sortby=station_id'
+        'contributor_acronym=' + acronym + '&sortby=station_id&limit=10000'
 
       const deploymentsResponse = await woudcClient.get(
         deploymentsURL + '?' + queryParams
