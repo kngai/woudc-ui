@@ -350,12 +350,14 @@ export default {
     async getObservationDates() {
       const dataRecordsURL =
         this.$config.WOUDC_UI_API_URL + '/collections/data_records/items'
-      let queryParams = 'sortby=timestamp_date&content_category=OzoneSonde&properties=timestamp_date'
-      queryParams += '&platform_id=' + this.selectedStationID
-      queryParams += '&limit=10000'
+      let MAX_LIMIT = this.$config.WOUDC_UI_API_MAX_LIMIT
+      let queryParams =
+        'sortby=timestamp_date&content_category=OzoneSonde&properties=timestamp_date'
+      queryParams += `&platform_id=${this.selectedStationID}`
+      queryParams += `&limit=${MAX_LIMIT}`
 
       const dataRecordsResponse = await woudcClient.get(
-        dataRecordsURL + '?' + queryParams
+        `${dataRecordsURL}?${queryParams}`
       )
 
       const observationDates = {}

@@ -305,8 +305,9 @@ export default {
       const dataRecordsURL =
         this.$config.WOUDC_UI_API_URL + '/collections/data_records/items'
       let queryParams = 'sortby=timestamp_date'
-      queryParams += '&platform_id=' + this.selectedStationID
-      queryParams += '&properties=timestamp_date,instrument_name,instrument_model,instrument_number'
+      queryParams += `&platform_id=${this.selectedStationID}`
+      queryParams +=
+        '&properties=timestamp_date,instrument_name,instrument_model,instrument_number'
 
       if (this.selectedInstrument !== null) {
         if (this.selectedInstrument.includes('Kipp_Zonen') == true) {
@@ -325,15 +326,13 @@ export default {
           queryParams += '&instrument_number=' + serial
         }
       }
-
-      const broadbandParams =
-        queryParams + '&content_category=Broad-band&limit=10000'
+      let MAX_LIMIT = this.$config.WOUDC_UI_API_MAX_LIMIT
+      const broadbandParams = `${queryParams}&content_category=Broad-band&limit=${MAX_LIMIT}`
       const broadbandResponse = await woudcClient.get(
         dataRecordsURL + '?' + broadbandParams
       )
 
-      const spectralParams =
-        queryParams + '&content_category=Spectral&limit=10000'
+      const spectralParams = `${queryParams}&content_category=Spectral&limit=${MAX_LIMIT}`
       const spectralResponse = await woudcClient.get(
         dataRecordsURL + '?' + spectralParams
       )

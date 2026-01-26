@@ -58,9 +58,9 @@ const actions = {
     if (state.loaded) {
       return false
     }
-
+    let MAX_LIMIT = this.$config.WOUDC_UI_API_MAX_LIMIT
     const contributorsURL = '/collections/contributors/items'
-    const queryParams = 'sortby=acronym&limit=1000'
+    const queryParams = `sortby=acronym&limit=${MAX_LIMIT}`
     const response = await woudcClient.get(
       this.$config.WOUDC_UI_API_URL + contributorsURL + '?' + queryParams
     )

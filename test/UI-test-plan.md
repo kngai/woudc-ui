@@ -4,20 +4,20 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 
 ## News
 
-[`/en/news`](https://beta-woudc-dev.cmc.ec.gc.ca/en/news)
+[`/en/news`](https://woudc.org/en/news)
 
 - Ensure page loads
-  - Check XHR GET loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/collections/notifications/items?f=json`
+  - Check XHR GET loads `https://api.woudc.org/collections/notifications/items?f=json`
 - Click on keyword "graphs" to filter the news
   - Should have 2 articles displayed
   - Click "Reset Filters" to undo
 
 ## Station List
 
-[`/en/data/stations`](https://beta-woudc-dev.cmc.ec.gc.ca/en/data/stations)
+[`/en/data/stations`](https://woudc.org/en/data/stations)
 
 - Ensure page loads
-  - Check XHR POST loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/processes/woudc-data-registry-select-distinct/execution`
+  - Check XHR POST loads `https://api.woudc.org/processes/woudc-data-registry-select-distinct/execution`
 - Check to see if all columns sort properly
 - Click on GAW ID `KAG` and ensure it opens an external link on a new tab/page of station Kagoshima
 - Click on the row with WOUDC Station ID `007` and ensure row is highlighted and map shows popup of station
@@ -34,12 +34,12 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 
 ## Instrument List
 
-[`/en/data/instruments`](https://beta-woudc-dev.cmc.ec.gc.ca/en/data/instruments)
+[`/en/data/instruments`](https://woudc.org/en/data/instruments)
 
 - Ensure page loads
   - Table view of instruments
   - Map view of instruments
-  - Check XHR POST loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/processes/woudc-data-registry-select-distinct/execution`
+  - Check XHR POST loads `https://api.woudc.org/processes/woudc-data-registry-select-distinct/execution`
 - Click on a row and ensure row highlights and map displays a popup of corresponding instrument
 - Check to see if all columns sort properly
 - Click on a Station Name link and ensure it loads the single station page
@@ -50,7 +50,7 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 - Ensure page loads
   - Table view of contributors
   - Map view of contributors
-  - Check XHR GET loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/collections/contributors/items?sortby=acronym&limit=1000`
+  - Check XHR GET loads `https://api.woudc.org/collections/contributors/items?sortby=acronym&limit=1000`
 - Click on a row and ensure row highlights and map displays a popup of corresponding contributor
 - Check to see if all columns sort properly
 - Click on a Contributor Name link and ensure it opens an external link on a new page
@@ -65,10 +65,10 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 
 ## Ozonesonde Plots
 
-[`/en/data/products/ozonesonde`](https://beta-woudc-dev.cmc.ec.gc.ca/en/data/products/ozonesonde)
+[`/en/data/products/ozonesonde`](https://woudc.org/en/data/products/ozonesonde)
 
 - Ensure list of stations are loaded
-  - Check for 2 XHR POST that loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/processes/woudc-data-registry-select-distinct/execution`
+  - Check for 2 XHR POST that loads `https://api.woudc.org/processes/woudc-data-registry-select-distinct/execution`
     - Request input for station: `{"inputs":{"index":"station","distinct":{"orderByID":["woudc_id"]}}}`
     - Request input for contribution: `{"inputs":{"index":"contribution","distinct":{"orderByID":["station_id","dataset_id"]},"source":["station_id"]}}`
   - Check for XHR GET that loads `https://cdn.rawgit.com/OGCMetOceanDWG/wmo-ra/master/wmo-ra.geojson`
@@ -79,14 +79,13 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 - Select year: 2000
   - Ensure all graphs in results are loaded
 
-
 ## Total Ozone Plots
 
-[`/en/data/products/totalozone`](https://beta-woudc-dev.cmc.ec.gc.ca/en/data/products/totalozone)
+[`/en/data/products/totalozone`](https://woudc.org/en/data/products/totalozone)
 
 - Ensure list of stations are loaded
   - Map view of stations
-  - Check for 2 XHR POST that loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/processes/woudc-data-registry-select-distinct/execution`
+  - Check for 2 XHR POST that loads `https://api.woudc.org/processes/woudc-data-registry-select-distinct/execution`
     - Request input for contribution: `{"inputs":{"index":"contribution","distinct":{"orderByID":["station_id","dataset_id"]},"source":["station_id"]}}`
     - Request input for station: `{"inputs":{"index":"station","distinct":{"orderByID":["woudc_id"]}}}`
   - Check for XHR GET that loads `https://cdn.rawgit.com/OGCMetOceanDWG/wmo-ra/master/wmo-ra.geojson`
@@ -99,11 +98,11 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 
 ## UV Index Plots
 
-[`/en/data/products/uvindex`](https://beta-woudc-dev.cmc.ec.gc.ca/en/data/products/uvindex)
+[`/en/data/products/uvindex`](https://woudc.org/en/data/products/uvindex)
 
 - Ensure list of stations are loaded
   - Map view of stations
-  - Check for 2 XHR POST that loads `https://geobeta-woudc-dev.cmc.ec.gc.ca/oapi/processes/woudc-data-registry-select-distinct/execution`
+  - Check for 2 XHR POST that loads `https://api.woudc.org/processes/woudc-data-registry-select-distinct/execution`
     - Request input for contribution: `{"inputs":{"index":"contribution","distinct":{"orderByID":["station_id","dataset_id"]},"source":["station_id"]}}`
     - Request input for station: `{"inputs":{"index":"station","distinct":{"orderByID":["woudc_id"]}}}`
   - Check for XHR GET that loads `https://cdn.rawgit.com/OGCMetOceanDWG/wmo-ra/master/wmo-ra.geojson`
@@ -122,17 +121,17 @@ A test plan to test all aspects of the UI. Ensure Developer Tools (F12) are enab
 
 ## Data Search and Download
 
-[`/en/data/data-search-and-download`](https://beta-woudc-dev.cmc.ec.gc.ca/en/data/data-search-and-download)
+[`/en/data/data-search-and-download`](https://woudc.org/en/data/data-search-and-download)
 
 - Ensure all dropdowns shown are loaded and have options other than `All`
   - Map view of all stations (Dataset: `All`)
 - Ensure year range slider works and updates the data distribution graph display
 - Ensure the sort by toggles the sort order for country and station dropdown list
 - Select dataset: `Total Ozone - Daily Observations`
- - Ensure the country and station dropdown list has changed (should be less options vs `All` datasets)
- - Select station: `Buenos Aires Observatorio (091)`
-   - Ensure data distribution graphs are updated and displayed correctly
-   - Ensure the instrument dropdown only has `Dobson` available
-   - Change the year range of your choice
- - Submit
-   - Check search results match your selections
+- Ensure the country and station dropdown list has changed (should be less options vs `All` datasets)
+- Select station: `Buenos Aires Observatorio (091)`
+  - Ensure data distribution graphs are updated and displayed correctly
+  - Ensure the instrument dropdown only has `Dobson` available
+  - Change the year range of your choice
+- Submit
+  - Check search results match your selections

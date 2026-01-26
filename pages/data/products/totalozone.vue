@@ -322,20 +322,21 @@ export default {
         this.$config.WOUDC_UI_API_URL + '/collections/data_records/items'
       let queryParams = 'sortby=timestamp_date&content_category=TotalOzone'
       queryParams += '&platform_id=' + this.selectedStationID
-      queryParams += '&properties=timestamp_date,instrument_name,instrument_number'
+      queryParams +=
+        '&properties=timestamp_date,instrument_name,instrument_number'
 
       if (this.selectedInstrumentID !== null) {
         let instrument_number = parseInt(
           this.selectedInstrument.element.properties.serial
         )
-        queryParams +=
-          '&instrument_name=' + this.selectedInstrument.element.properties.name
-        queryParams += '&instrument_number=' + instrument_number
+        queryParams += `&instrument_name=${this.selectedInstrument.element.properties.name}`
+        queryParams += `&instrument_number=${instrument_number}`
       }
-      queryParams += '&limit=10000'
+      let MAX_LIMIT = this.$config.WOUDC_UI_API_MAX_LIMIT
+      queryParams += `&limit=${MAX_LIMIT}`
 
       const dataRecordsResponse = await woudcClient.get(
-        dataRecordsURL + '?' + queryParams
+        `${dataRecordsURL}?${queryParams}`
       )
 
       const observationTools = {}
