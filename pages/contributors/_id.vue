@@ -248,8 +248,8 @@ export default {
 
       const deploymentsURL =
         this.$config.WOUDC_UI_API_URL + '/collections/deployments/items'
-      const queryParams =
-        'contributor_acronym=' + acronym + '&sortby=station_id&limit=10000'
+      let MAX_LIMIT = this.$config.WOUDC_UI_API_MAX_LIMIT
+      const queryParams = `contributor_acronym=${acronym}&sortby=station_id&limit=${MAX_LIMIT}`
 
       const deploymentsResponse = await woudcClient.get(
         deploymentsURL + '?' + queryParams
