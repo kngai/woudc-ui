@@ -51,9 +51,7 @@
           "body-standards": "The WOUDC web services adhere to open standards ratified by the {ogc} (OGC), and the {iso} (ISO) which enable interoperability and thus make data easy to discover, access, visualize and integrate. OGC and ISO standards play an important role in {interoperability} as part of the {wis} and are supported by numerous off the shelf open source or commercial tools."
         },
         "table": {
-          "links": [
-            "???"
-          ],
+          "links": ["???"],
           "title": "The following OGC web services are made available for standards-based, dynamic data access:"
         },
         "title": "Web services"
@@ -987,9 +985,7 @@
           "body-standards": "The WOUDC web services adhere to open standards ratified by the {ogc} (OGC), and the {iso} (ISO) which enable interoperability and thus make data easy to discover, access, visualize and integrate. OGC and ISO standards play an important role in {interoperability} as part of the {wis} and are supported by numerous off the shelf open source or commercial tools."
         },
         "table": {
-          "links": [
-            "???"
-          ],
+          "links": ["???"],
           "title": "The following OGC web services are made available for standards-based, dynamic data access:"
         },
         "title": "Web services"
@@ -1071,7 +1067,7 @@
       "wis2SearchMechanisms": "WIS2 search results provide \"actionable\" links that facilitate programmatic access and retrieval of data using various mechanisms:",
       "wis2LinksRawData": "Raw data download (for example, the {woudcWAF})",
       "wis2LinksPubSub": "Data notifications using Pub/Sub (MQTT)",
-      "wis2LinksAPIaccess": "API access (for example, via the {woudcAPI)",
+      "wis2LinksAPIaccess": "API access (for example, via the {woudcAPI})",
       "woudcWAF": "WOUDC WAF",
       "woudcAPIDescription": "The WOUDC API is available at {woudcAPILink}. The API provides discovery, access, visualization and processing functionality to all WOUDC data and metadata, as well as processes for data validation, reporting and quality assessment.",
       "wis2CookbookProvides": "For informative purposes, the {wis2Cookbook} provides numerous examples, code snippets, recipes and workflows in support of WIS2 requirements.",

@@ -172,40 +172,39 @@
 
     <h2>{{ $t('data.access.toolsAndExamples') }}</h2>
 
-    <p>
-      {{ $t('data.access.exampleToolsForWOUDC') }}
-      <v-card class="mx-auto">
-        <v-list dense>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>
-                <a href="https://github.com/woudc/pywoudc" target="_blank">
-                  {{ $t('data.access.pywoudc') }}
-                </a>
-              </v-list-item-title>
-              <v-list-item-subtitle>
-                {{ $t('data.access.pywoudcDesc') }}
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>
-                <a
-                  href="https://github.com/woudc/woudc/tree/master/notebooks"
-                  target="_blank"
-                >
-                  {{ $t('data.access.notebooks') }}
-                </a>
-              </v-list-item-title>
-              <v-list-item-subtitle>
-                {{ $t('data.access.notebooksDesc') }}
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </p>
+    <p>{{ $t('data.access.exampleToolsForWOUDC') }}</p>
+
+    <v-card class="mx-auto">
+      <v-list dense>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>
+              <a href="https://github.com/woudc/pywoudc" target="_blank">
+                {{ $t('data.access.pywoudc') }}
+              </a>
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ $t('data.access.pywoudcDesc') }}
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>
+              <a
+                href="https://github.com/woudc/woudc/tree/master/notebooks"
+                target="_blank"
+              >
+                {{ $t('data.access.notebooks') }}
+              </a>
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ $t('data.access.notebooksDesc') }}
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-card>
 
     <h2>{{ $t('data.access.wmoInfoSystem') }}</h2>
 
@@ -256,50 +255,57 @@
 
     <p>{{ $t('data.access.wis2WoudcDataShare') }}</p>
 
-    <h3>{{ $t('data.access.wis2DiscoveryAccess') }}</h3>
+    <div id="wis2-description-section">
+      <h3>{{ $t('data.access.wis2DiscoveryAccess') }}</h3>
 
-    <p>{{ $t('data.access.wis2BuiltOn') }}</p>
+      <p>{{ $t('data.access.wis2BuiltOn') }}</p>
 
-    <ul>
-      <li>{{ $t('data.access.wis2Enables') }}</li>
-      <li>{{ $t('data.access.wis2MakesAvailable') }}</li>
-      <li>{{ $t('data.access.wis2ProvidesAPIRecords') }}</li>
-    </ul>
+      <ul>
+        <li>{{ $t('data.access.wis2Enables') }}</li>
+        <li>{{ $t('data.access.wis2MakesAvailable') }}</li>
+        <li>{{ $t('data.access.wis2ProvidesAPIRecords') }}</li>
+      </ul>
 
-    <p>{{ $t('data.access.wis2SearchMechanisms') }}</p>
+      <p>{{ $t('data.access.wis2SearchMechanisms') }}</p>
 
-    <ul>
-      <i18n path="data.access.wis2LinksRawData" tag="li">
-        <template #woudcWAF>
-          <a href="https://woudc.org/archive" target="_blank">
-            {{ $t('data.access.woudcWAF') }}
-          </a>
-          <v-icon x-small>mdi-open-in-new</v-icon>
-        </template>
-      </i18n>
-      <i18n path="data.access.wis2LinksAPIaccess" tag="li">
-        <template #woudcAPI>
-          <a href="https://api.woudc.org" target="_blank">
-            {{ $t('data.access.woudcAPI') }}
-          </a>
-          <v-icon x-small>mdi-open-in-new</v-icon>
-        </template>
-      </i18n>
-      <li>{{ $t('data.access.wis2LinksPubSub') }}</li>
-    </ul>
+      <ul>
+        <i18n path="data.access.wis2LinksRawData" tag="li">
+          <template #woudcWAF>
+            <a href="https://woudc.org/archive" target="_blank">
+              {{ $t('data.access.woudcWAF') }}
+            </a>
+            <v-icon x-small>mdi-open-in-new</v-icon>
+          </template>
+        </i18n>
+        <i18n path="data.access.wis2LinksAPIaccess" tag="li">
+          <template #woudcAPI>
+            <a href="https://api.woudc.org" target="_blank">
+              {{ $t('data.access.woudcAPI') }}
+            </a>
+            <v-icon x-small>mdi-open-in-new</v-icon>
+          </template>
+        </i18n>
+        <li>{{ $t('data.access.wis2LinksPubSub') }}</li>
+      </ul>
+    </div>
 
     <!-- prettier-ignore -->
-    <v-card>
-      <div class="mermaid">
+    <v-card class="mx-auto">
+      <pre class="mermaid" aria-label="WIS2 discovery, subscription and download workflow">
         ---
         title: WIS2 discovery, subscription and download
         ---
         flowchart TD
+            accTitle: WIS2 discovery, subscription and download
+            accDescr {
+              A flowchart demonstrating the cycle between (1) the Data Consumer searching the WIS2 Global Discovery Catalogue, (2) which then subscribes to the WIS2 Global Broker, (3) which then notifies the Data Consumer.
+              In addition, (4) the Data Consumer can download from the WIS2 Global Cache
+            }
             A[fa:fa-user Data Consumer] -->|1 - search| B[fa:fa-book WIS2 Global Discovery Catalogue]
             B -->|2 - subscribe| C[fa:fa-bullhorn WIS2 Global Broker]
             C -->|3 - notify| A
             A -->|4 - download| D[fa:fa-download WIS2 Global Cache]
-      </div>
+      </pre>
     </v-card>
 
     <i18n path="data.access.wis2GDCAvailableAt" tag="p">
@@ -399,27 +405,9 @@ export default {
         {
           src: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
           async: true,
-          callback: () => this.renderMermaid(),
         },
       ],
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      if (window.mermaid) {
-        this.renderMermaid()
-      } else {
-        // Wait for script to load
-        setTimeout(() => this.renderMermaid(), 500)
-      }
-    })
-  },
-  methods: {
-    renderMermaid() {
-      if (window.mermaid) {
-        window.mermaid.contentLoaded()
-      }
-    },
   },
   nuxtI18n: {
     paths: {
@@ -430,12 +418,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.mermaid {
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-</style>
+<style scoped></style>
